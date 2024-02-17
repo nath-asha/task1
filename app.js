@@ -1,18 +1,18 @@
-const express = require('express');
+import express from 'express';
 const app = express();
 const PORT = 3000;
 
 // Middlewares
-app.use(express.json()); // Built-in middleware for parsing JSON requests
+app.use(json()); // Built-in middleware for parsing JSON requests
 
 
 // Application-level middleware
-const authMiddleware = require('./middleware/authMiddleware');
+import authMiddleware from './middleware/authMiddleware';
 app.use(authMiddleware);
 
 // Router-level middleware
-const authRoutes = require('./routes/authRoutes');
-const blogRoutes = require('./routes/blogRoutes');
+import authRoutes from './routes/authRoutes';
+import blogRoutes from './routes/blogRoutes';
 app.use('/auth', authRoutes);
 app.use('/blogs', blogRoutes);
 
