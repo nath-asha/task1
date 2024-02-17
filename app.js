@@ -7,7 +7,7 @@ app.use(express.json()); // Built-in middleware for parsing JSON requests
 
 
 // Application-level middleware
-const authMiddleware = require('./middleware/authMiddleware').default;
+const authMiddleware = require('./middleware/authMiddleware');
 app.use(authMiddleware);
 
 // Router-level middleware
